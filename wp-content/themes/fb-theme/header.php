@@ -195,7 +195,7 @@
                 				<span class="icon-bar"></span>
                 				<span class="icon-bar"></span>
                       </button>
-                      <a href="/" class="navbar-brand logo"><img src="http://localhost/tentacle_doc/wp-content/uploads/2016/06/te-favicon.png" width="20px"></a>
+                      <a href="/" class="navbar-brand logo"><img src="<?php echo home_url()?>/wp-content/uploads/2016/06/te-favicon.png" width="20px"></a>
                       <ul class="nav navbar-nav">
                         <li>
                         <h2 style="margin:6px; padding:0px; margin-left:15px;">Tentacle</h2>
