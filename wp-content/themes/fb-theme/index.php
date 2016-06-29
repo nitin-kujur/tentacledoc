@@ -52,7 +52,7 @@
                          // });
                           
                           $(document).ready(function(){
-                              ajaxGetdoc(<?php echo home_url()?>'/about/');
+                              ajaxGetdoc('<?php echo home_url()?>/about/');
                           });
 
                           function ajaxGetdoc(url){
