@@ -52,7 +52,7 @@
                          // });
                           
                           $(document).ready(function(){
-                              ajaxGetdoc('http://localhost/tentacle_doc/about/');
+                              ajaxGetdoc(<?php echo home_url()?>'/about/');
                           });
 
                           function ajaxGetdoc(url){
