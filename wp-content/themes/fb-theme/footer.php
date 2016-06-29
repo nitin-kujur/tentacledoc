@@ -4,7 +4,7 @@
                           </div>
                            <div class="col-md-6 col-sm-6 col-xs-12">
                             <!-- <p> -->
-                            <a href="#" class="pull-right"><img src="http://localhost/tentacle_doc/wp-content/uploads/2016/06/sunoray_logo.png"></a>
+                            <a href="#" class="pull-right"><img src="<?php echo home_url()?>/wp-content/uploads/2016/06/sunoray_logo.png"></a>
                             <!-- </p> -->
                           </div>
                         </div>
