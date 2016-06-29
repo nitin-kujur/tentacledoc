@@ -39,6 +39,8 @@ define('DB_COLLATE', '');
 define('WP_HOME','http://tentacledoc.herokuapp.com/');
 define('WP_SITEURL','http://tentacledoc.herokuapp.com/');
 define('WP_MEMORY_LIMIT', '64M');
+global $wp_rewrite;
+    $wp_rewrite->flush_rules();
 /**#@+
  * Authentication Unique Keys and Salts.
  *
