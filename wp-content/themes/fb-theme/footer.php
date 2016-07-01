@@ -21,7 +21,7 @@
                       <hr/>
                       
                       <h4 class="text-center">
-                      <a href="http://bootply.com/96266" target="ext">©Copyright 2013 - 2016.</a>
+                      ©Copyright 2013 - 2016. Powered by <a href="http://sunoray.com/" target="ext">Sunoray</a> and <a href="http://www.tentaclecloud.com/" target="ext">Tentacle</a>
                       </h4>
                         
                       <hr/>
@@ -36,27 +36,28 @@
     </div>
 </div>
 
+<div id="goUp" onclick="goUp()"  style="border-radius: 50%; border:3px solid white; background-color: teal; color: white; text-align: center; width: 36px; height: 36px; position: fixed; bottom: 10px; right: 10px; font-size: 24px;"><i class="glyphicon glyphicon-circle-arrow-up"></i></div>
 
 <!--post modal-->
 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        			Update Status
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+        			<!-- Update Status -->
               </div>
               <div class="modal-body">
-                  <form class="form center-block">
+                  <!-- <form class="form center-block">
                     <div class="form-group">
                       <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
                     </div>
-                  </form>
+                  </form> -->
               </div>
               <div class="modal-footer">
-                  <div>
+                 <!--  <div>
                   <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
                     <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-        		  </div>	
+        		  </div>	 -->
           </div>
       </div>
   </div>
@@ -77,28 +78,34 @@
       
     });
 
-    $(function(){
-      var currencies = [
-        { value: 'Afghan afghani', data: 'AFN' },
-        { value: 'Albanian lek', data: 'ALL' },
-        { value: 'Algerian dinar', data: 'DZD' },
-        { value: 'European euro', data: 'EUR' },
-        { value: 'Angolan kwanza', data: 'AOA' },
-        { value: 'East Caribbean dollar', data: 'XCD' },
-        { value: 'Vietnamese dong', data: 'VND' },
-        { value: 'Yemeni rial', data: 'YER' },
-        { value: 'Zambian kwacha', data: 'ZMK' },
-        { value: 'Zimbabwean dollar', data: 'ZWD' }
-      ];
+     function goUp(){
+         	 	jQuery("html").animate({
+	                scrollTop: "0"
+	              }, 1000);
+         	 }
 
-      $('#autocomplete').autocomplete({
-        lookup: currencies,
-        onSelect: function (suggestion) {
-        // some function here
-        }
-      });
+    // $(function(){
+    //   var currencies = [
+    //     { value: 'Afghan afghani', data: 'AFN' },
+    //     { value: 'Albanian lek', data: 'ALL' },
+    //     { value: 'Algerian dinar', data: 'DZD' },
+    //     { value: 'European euro', data: 'EUR' },
+    //     { value: 'Angolan kwanza', data: 'AOA' },
+    //     { value: 'East Caribbean dollar', data: 'XCD' },
+    //     { value: 'Vietnamese dong', data: 'VND' },
+    //     { value: 'Yemeni rial', data: 'YER' },
+    //     { value: 'Zambian kwacha', data: 'ZMK' },
+    //     { value: 'Zimbabwean dollar', data: 'ZWD' }
+    //   ];
 
-    });
+    //   $('#autocomplete').autocomplete({
+    //     lookup: currencies,
+    //     onSelect: function (suggestion) {
+    //     // some function here
+    //     }
+    //   });
+
+    // });
 
       // setup autocomplete function pulling from currencies[] array
       // $('#autocomplete').autocomplete({

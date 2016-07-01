@@ -4,8 +4,17 @@
 ?>
 
 <script type="text/javascript">
-	var list = <?php create_custom_menus( $menu_name );?>;
-	console.log(list);
+ $(function(){
+	var list = "["+<?php create_custom_menus( $menu_name );?>+"]";
+  var menuList = JSON.parse(list);
+	//console.log(list);
+   $('#autocomplete').autocomplete({
+        lookup: menuList,
+        onSelect: function (suggestion) {
+          $('#searchBtn').setAttribute('onclick',' ajaxGetdoc("'+suggestion.data+'")');
+        }
+      });
+ });
 </script>
 
 <?php 

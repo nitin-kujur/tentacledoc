@@ -3,6 +3,7 @@
 	<head>
 		<title><?php bloginfo('name')?></title>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.apple.com/wss/fonts/?family=Myriad+Set+Pro&amp;weights=200,400&amp;v=1" type="text/css" media="all"> 
 
 		 <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -12,6 +13,23 @@
     
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+  </script>
 		
 		<?php wp_head();?>
 
@@ -19,6 +37,7 @@
       html, body{
         margin:0px !important;
         padding: 0px !important;
+        font-family:  "Myriad Set Pro","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif" !important;
       }
     </style>
 
@@ -206,9 +225,10 @@
                     <div id="searchfield">
                     <form class="navbar-form navbar-right" style="margin-right:3px;">
                         <div class="input-group input-group-sm" style="max-width:480px;">
-                          <input class="form-control fontAwesome biginput" placeholder="&#xF002; Search" name="currency" id="autocomplete" type="text" onkeyup="showHint(this.value)" style="outline: none !important;">
+                          <!-- <input class="form-control fontAwesome biginput" placeholder="&#xF002; Search" name="currency" id="autocomplete" type="text" onkeyup="showHint(this.value)" style="outline: none !important;"> -->
+                          <input class="form-control fontAwesome biginput" placeholder="&#xF002; Search" name="currency" id="autocomplete" type="text" style="outline: none !important;">
                           <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            <button id="searchBtn" class="btn btn-default" type="button" onclick=""><i class="glyphicon glyphicon-search"></i></button>
                           </div>
                         </div>
                     </form>

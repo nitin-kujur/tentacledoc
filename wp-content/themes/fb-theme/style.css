@@ -360,3 +360,17 @@ html, body {
     #searchfield form .biginput:focus {
       color: #858585;
     }
+
+    /***** MODAL PROPERTIES *****/
+        .modal-content {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background:transparent;
+            border:none;
+            outline:none;
+        }
+        .modal-content iframe {
+            border:none;
+            padding:0;
+            margin:0;
+        }

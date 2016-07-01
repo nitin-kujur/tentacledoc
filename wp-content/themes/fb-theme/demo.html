@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	</head>
 	<body>
 		<script>
@@ -18,10 +19,40 @@
 		contentChanged = function() {
 			alert(this.innerHTML);
 		}
-		</script>
+		
+	     
+	      //onclick="window.scrollTo(0,0)"
+  		</script>
 
 		<div id="blah">foo</div>
-		<button onclick="$('blah').innerHTML += ' bar'">test</button>
-
+		<!-- <button onclick="$('blah').innerHTML += ' bar'">test</button> -->
+		<button id="btn" onclick="">test</button>
+		<!-- <button onclick="$('btn').attr('onclick','$(\"blah\").innerHTML += \" bar\"')">test1</button>
+ -->    
+		 <button onclick="$('btn').setAttribute('onclick',' $(\'blah\').innerHTML += \'bar\' ')">test1</button>
+         <div id="goUp" onclick="goUp()"  style="border-radius: 50%; border:3px solid white; background-color: teal; color: white; text-align: center; width: 36px; height: 36px; position: fixed; bottom: 10px; right: 10px;">^</div>
+         <div style="height: 1000px;"></div>
+         <a href="#bla" >top</a>
+         <script type="text/javascript">
+         	 $(function() {
+	        $('a[href*="#"]:not([href="#"])').click(function() {
+	          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	            var target = $(this.hash);
+	            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	            if (target.length) {
+	              $('html, body').animate({
+	                scrollTop: target.offset().top
+	              }, 1000);
+	              return false;
+	            }
+	          }
+	        });
+	      });
+         	 function goUp(){
+         	 	jQuery("html").animate({
+	                scrollTop: "0"
+	              }, 1000);
+         	 }
+         </script>
 	</body>
 </html>
