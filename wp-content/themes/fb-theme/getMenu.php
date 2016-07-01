@@ -1,13 +1,12 @@
 <?php
 	$menu_name = 'ByRole';
-                      // create_custom_menus( $menu_name );
 ?>
 
 <script type="text/javascript">
  $(function(){
-	var list = "["+<?php create_custom_menus( $menu_name );?>+"]";
+	var list = "["+<?php create_custom_list( $menu_name )?>+"]";
   var menuList = JSON.parse(list);
-	//console.log(list);
+	console.log(list);
    $('#autocomplete').autocomplete({
         lookup: menuList,
         onSelect: function (suggestion) {
@@ -19,7 +18,7 @@
 
 <?php 
 
-            function create_custom_menus( $theme_location ) {
+            function create_custom_list( $theme_location ) {
                 if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
          
                     $menu = get_term( $locations[$theme_location], 'nav_menu' );
