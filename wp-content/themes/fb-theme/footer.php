@@ -25,9 +25,7 @@
                       </h4>
                         
                       <hr/>
-
-                      <div id="goUp" class="w3-card-2" onclick="goUp()"  style=""><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
-                        
+ 
                       
                     </div><!-- /col-9 -->
                 </div><!-- /padding -->
@@ -38,7 +36,7 @@
     </div>
 </div>
 
-
+ <div id="goUp" class="w3-card-2" onclick="goUp()"  style=""><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
 
 <!--post modal-->
 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
