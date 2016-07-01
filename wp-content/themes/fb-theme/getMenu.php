@@ -10,7 +10,7 @@
    $('#autocomplete').autocomplete({
         lookup: menuList,
         onSelect: function (suggestion) {
-          $('#searchBtn').setAttribute('onclick',' ajaxGetdoc("'+suggestion.data+'")');
+          $('searchBtn').attr('onclick',' ajaxGetdoc("'+suggestion.data+'")');
         }
       });
  });
