@@ -240,7 +240,7 @@
                     $menu_list = '<!-- no menu defined in location "'.$theme_location.'" -->';
                 }
                  
-                echo implode( ",", $menu_list);
+                echo implode( ",", "'".$menu_list."'");
 
 
 								 //print("<pre>".print_r($menu_list,true)."</pre>");
