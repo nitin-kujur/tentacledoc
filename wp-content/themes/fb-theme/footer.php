@@ -142,13 +142,13 @@
 	var list = <?php create_custom_list( $menu_name )?>;
   // var menuList = JSON.parse(list);
   var menuList = (new Function("return [" + list + "];")());
-  console.log(list);
-	console.log(menuList);
+  //console.log(list);
+	// console.log(menuList);
 
    $('#autocomplete').autocomplete({
         lookup: menuList,
         onSelect: function (suggestion) {
-          $('#searchBtn').setAttribute('onclick',' ajaxGetdoc("'+suggestion.data+'")');
+          $('searchBtn').attr('onclick',' ajaxGetdoc("'+suggestion.data+'")');
         }
       });
  });
