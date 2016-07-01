@@ -374,3 +374,25 @@ html, body {
             padding:0;
             margin:0;
         }
+
+        .ficon{
+          font-size:24px;
+          color:#8b9bbe !important;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+        }
+
+        .goup{
+          border-radius: 50%;
+          border:3px solid darkteal; 
+          background-color: teal; 
+          color: white; 
+          text-align: center; 
+          width: 48px; height: 48px; 
+          position: fixed; 
+          bottom: 10px; right: 10px; 
+          font-size: 24px;
+        }

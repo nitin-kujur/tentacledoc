@@ -4,7 +4,7 @@
                           </div>
                            <div class="col-md-6 col-sm-6 col-xs-12">
                             <!-- <p> -->
-                            <a href="#" class="pull-right"><img src="<?php echo home_url()?>/wp-content/uploads/2016/06/sunoray_logo.png"></a>
+                            <a href="http://sunoray.com/" class="pull-right"><img src="<?php echo home_url()?>/wp-content/uploads/2016/06/sunoray_logo.png"></a>
                             <!-- </p> -->
                           </div>
                         </div>
@@ -25,6 +25,8 @@
                       </h4>
                         
                       <hr/>
+
+                      <div id="goUp" onclick="goUp()"  style=""><i class="glyphicon glyphicon-circle-arrow-up"></i></div>
                         
                       
                     </div><!-- /col-9 -->
@@ -36,7 +38,7 @@
     </div>
 </div>
 
-<div id="goUp" onclick="goUp()"  style="border-radius: 50%; border:3px solid white; background-color: teal; color: white; text-align: center; width: 36px; height: 36px; position: fixed; bottom: 10px; right: 10px; font-size: 24px;"><i class="glyphicon glyphicon-circle-arrow-up"></i></div>
+
 
 <!--post modal-->
 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
