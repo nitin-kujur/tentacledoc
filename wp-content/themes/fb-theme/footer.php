@@ -1,8 +1,8 @@
                         <div class="row">
-                          <div class="col-md-6 col-sm-6 col-xs-12">
+                          <!-- <div class="col-md-6 col-sm-6 col-xs-12">
                             <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
-                          </div>
-                           <div class="col-md-6 col-sm-6 col-xs-12">
+                          </div> -->
+                           <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                             <!-- <p> -->
                             <a href="http://sunoray.com/" class="pull-right"><img src="<?php echo home_url()?>/wp-content/uploads/2016/06/sunoray_logo.png"></a>
                             <!-- </p> -->
@@ -142,13 +142,13 @@
 	var list = <?php create_custom_list( $menu_name )?>;
   // var menuList = JSON.parse(list);
   var menuList = (new Function("return [" + list + "];")());
-  //console.log(list);
-	// console.log(menuList);
+  console.log(list);
+	console.log(menuList);
 
    $('#autocomplete').autocomplete({
         lookup: menuList,
         onSelect: function (suggestion) {
-          $('searchBtn').attr('onclick',' ajaxGetdoc("'+suggestion.data+'")');
+          document.getElementById('searchBtn').setAttribute('onclick',' ajaxGetdoc("'+suggestion.data+'")');
         }
       });
  });
