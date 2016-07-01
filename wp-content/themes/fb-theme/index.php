@@ -61,7 +61,7 @@
                                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                                   docText = xhttp.responseText;
                                   document.getElementById("ditto").innerHTML = docText;
-                                  console.log(docText);
+                                  //console.log(docText);
                                 }
                               };
                               xhttp.open("GET", url, true);

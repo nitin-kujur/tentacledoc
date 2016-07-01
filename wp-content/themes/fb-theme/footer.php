@@ -94,7 +94,7 @@
     });
 
      function goUp(){
-         	 	jQuery("html").animate({
+         	 	jQuery("#ditto").animate({
 	                scrollTop: "0"
 	              }, 1000);
          	 }
@@ -141,7 +141,7 @@
  $(function(){
 	var list = "["+<?php create_custom_list( $menu_name )?>+"]";
   var menuList = JSON.parse(list);
-	console.log(list);
+	console.log(menuList);
 
    $('#autocomplete').autocomplete({
         lookup: menuList,
