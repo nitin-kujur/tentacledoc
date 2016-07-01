@@ -170,7 +170,7 @@
                             $value = preg_replace("/[+]/", ".", $menu_item->title);
                             $value1 = preg_replace("/(&nbsp;)/", ".",$value);
 
-                            $menu_list[] = '{value:"'.$menu_item->title.'",data:'.$menu_item->url.'"}';
+                            $menu_list[] = '{value:"'.$menu_item->title.'",data:"'.$menu_item->url.'"}';
 
 
                             $menu_array = array();
@@ -188,7 +188,7 @@
                                               $value = preg_replace("/(\+&nbsp;)/", "", $subsubmenu->title);
                                               $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                              $menu_array2[] = '{value:"'.$value.'",data:'.$subsubmenu->url.'"}';
+                                              $menu_array2[] = '{value:"'.$value.'",data:"'.$subsubmenu->url.'"}';
 
                                           }
                                       }
@@ -197,7 +197,7 @@
                                           $value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                           $value = preg_replace("/(&nbsp;)/", " ",$value);
                                           
-                                          $menu_list[] = '{value:"'.$value.'",data:'.$submenu->url.'"}';
+                                          $menu_list[] = '{value:"'.$value.'",data:"'.$submenu->url.'"}';
 
                                           foreach( $menu_array2 as $menu_array2_item ) {
                                           			$menu_list[] = $menu_array2_item;
@@ -208,7 +208,7 @@
                                       	$value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                         $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                      	$menu_list[] = '{value:"'.$value.'",data:'.$submenu->url.'"}';
+                                      	$menu_list[] = '{value:"'.$value.'",data:"'.$submenu->url.'"}';
                                       }
                                     // ----------------------------------------------
 
