@@ -387,7 +387,7 @@ html, body {
 
         #goUp{
           border-radius: 50%;
-          border:3px solid darkteal; 
+          border:3px solid #1a1a1a; 
           background-color: teal; 
           color: white; 
           text-align: center; 

@@ -26,7 +26,7 @@
                         
                       <hr/>
 
-                      <div id="goUp" onclick="goUp()"  style=""><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
+                      <div id="goUp" class="w3-card-2" onclick="goUp()"  style=""><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
                         
                       
                     </div><!-- /col-9 -->
