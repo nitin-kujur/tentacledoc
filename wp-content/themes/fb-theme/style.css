@@ -385,7 +385,7 @@ html, body {
           -ms-transform: translateY(-50%);
         }
 
-        #goUp{
+        #goUpbtn{
           border-radius: 50%;
           border:3px solid #1a1a1a; 
           background-color: teal; 
