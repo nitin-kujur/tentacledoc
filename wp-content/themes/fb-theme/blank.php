@@ -28,14 +28,14 @@ Template Name: Blank Template
 
 			 
 			<div class="panel panel-default">
-        <div class="panel-heading"><h4><?php echo preg_replace("/(\+&nbsp;)/", "", $title);?></h4></div>
+        <div class="panel-heading"><h4><strong><?php echo preg_replace("/(\+&nbsp;)/", "", $title);?></strong></h4></div>
        	<div class="panel-body">
         	<?php the_content();?>           
         </div>
       </div>
 
       <!-- <p>Suggestions: <span id="txtHint"></span></p> -->
-			<?php include 'getMenu.php';?>
+			<?php //include 'getMenu.php';?>
 
 			<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
 
