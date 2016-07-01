@@ -37,7 +37,7 @@
       html, body{
         margin:0px !important;
         padding: 0px !important;
-        font-family:  "Myriad Set Pro","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif" !important;
+        font-family:  "Myriad Set Pro","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
       }
     </style>
 

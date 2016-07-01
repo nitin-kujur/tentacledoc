@@ -375,7 +375,7 @@ html, body {
             margin:0;
         }
 
-        .ficon{
+        #ficon{
           font-size:24px;
           color:#8b9bbe !important;
           position: relative;
@@ -385,7 +385,7 @@ html, body {
           -ms-transform: translateY(-50%);
         }
 
-        .goup{
+        #goup{
           border-radius: 50%;
           border:3px solid darkteal; 
           background-color: teal; 
@@ -395,4 +395,5 @@ html, body {
           position: fixed; 
           bottom: 10px; right: 10px; 
           font-size: 24px;
+          cursor: pointer;
         }

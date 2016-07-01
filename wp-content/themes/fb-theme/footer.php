@@ -26,7 +26,7 @@
                         
                       <hr/>
 
-                      <div id="goUp" onclick="goUp()"  style=""><i class="glyphicon glyphicon-circle-arrow-up"></i></div>
+                      <div id="goUp" onclick="goUp()"  style=""><i class="glyphicon ficon glyphicon-circle-arrow-up"></i></div>
                         
                       
                     </div><!-- /col-9 -->
