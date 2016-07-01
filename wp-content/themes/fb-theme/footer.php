@@ -36,7 +36,16 @@
     </div>
 </div>
 
- <div id="goUpbtn" class="w3-card-2" onclick="goUp()"  style=""><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
+ <div id="goUpbtn" class="w3-card-2" onclick="goUp()"  style="border-radius: 50%;
+          border:3px solid #1a1a1a; 
+          background-color: teal; 
+          color: white; 
+          text-align: center; 
+          width: 48px; height: 48px; 
+          position: fixed; 
+          bottom: 10px; right: 10px; 
+          font-size: 24px;
+          cursor: pointer;"><i id="ficon" class="glyphicon glyphicon-circle-arrow-up"></i></div>
 
 <!--post modal-->
 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -117,5 +126,8 @@
       // });
     
     </script>
+
+     <?php include 'getMenu.php';?>
+
 	</body>
 </html>

@@ -35,7 +35,7 @@ Template Name: Blank Template
       </div>
 
       <!-- <p>Suggestions: <span id="txtHint"></span></p> -->
-			<?php //include 'getMenu.php';?>
+			
 
 			<?php if ( is_singular() ) : // If viewing a single post/page/CPT. ?>
 
