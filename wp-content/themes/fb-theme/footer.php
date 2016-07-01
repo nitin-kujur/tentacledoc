@@ -139,8 +139,10 @@
 
 <script type="text/javascript">
  $(function(){
-	var list = "["+<?php create_custom_list( $menu_name )?>+"]";
-  var menuList = JSON.parse(list);
+	var list = <?php create_custom_list( $menu_name )?>;
+  // var menuList = JSON.parse(list);
+  var menuList = (new Function("return [" + list + "];")());
+  console.log(list);
 	console.log(menuList);
 
    $('#autocomplete').autocomplete({
