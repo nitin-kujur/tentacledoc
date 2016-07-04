@@ -1,0 +1,120 @@
+  /*
+Theme Name: teal-theme
+Author:teal-theme
+Version:1.0
+*/
+
+/**/
+
+    .logo {
+      display:block;
+      padding:3px;
+      background-color:#fff;
+      /*color:#3B5999;*/
+      height:28px;
+      width:28px;
+      margin:9px;
+      margin-right:2px;
+      margin-left:15px;
+      /*font-size:20px;*/
+      /*font-weight:700;*/
+      text-align:center;
+      text-decoration:none;
+      /*text-shadow:0 0 1px;*/
+      border-radius:2px;
+    }
+    
+
+
+    /*
+     * off canvas sidebar
+     * --------------------------------------------------
+     */
+    @media screen and (max-width: 768px) {
+     
+    }
+
+    a{
+        outline: none !important;
+        text-decoration-line: none !important;
+        
+    }
+
+    
+
+    .fontAwesome {
+      font-family: Helvetica, 'FontAwesome', sans-serif;
+    }
+
+    /*--------------------------------------*/
+    .autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+    .autocomplete-suggestion { padding: 10px 5px; font-size: 15px; white-space: nowrap; overflow: hidden; }
+    .autocomplete-selected { background: #f0f0f0; }
+    .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+    /*--------------------------------------*/
+
+    #searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+
+    #searchfield form {
+      display: inline-block;
+      /*background: #eeefed;
+      padding: 0;
+      margin: 0;
+      padding: 5px;
+      border-radius: 3px;
+      margin: 5px 0 0 0;*/
+    }
+    #searchfield form .biginput {
+      /*width: 600px;
+      height: 40px;
+      padding: 0 10px 0 10px;
+      background-color: #fff;
+      border: 1px solid #c8c8c8;
+      border-radius: 3px;
+      color: #aeaeae;
+      font-weight:normal;
+      font-size: 1.5em;*/
+      -webkit-transition: all 0.2s linear;
+      -moz-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+    }
+    #searchfield form .biginput:focus {
+      color: #858585;
+    }
+
+    /***** MODAL PROPERTIES *****/
+        .modal-content {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background:transparent;
+            border:none;
+            outline:none;
+        }
+        .modal-content iframe {
+            border:none;
+            padding:0;
+            margin:0;
+        }
+
+        #ficon{
+          font-size:24px;
+          color:#8b9bbe !important;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+        }
+
+        #goUpbtn{
+          border-radius: 50%;
+          border:3px solid #1a1a1a; 
+          background-color: teal; 
+          color: white; 
+          text-align: center; 
+          width: 48px; height: 48px; 
+          position: fixed; 
+          bottom: 10px; right: 10px; 
+          font-size: 24px;
+          cursor: pointer;
+        }
