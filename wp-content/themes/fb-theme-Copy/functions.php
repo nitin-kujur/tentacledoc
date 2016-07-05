@@ -7,7 +7,7 @@ function fb_theme_enqueue_styles() {
 	//wp_enqueue_style( 'bootstrap_theme', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css');
 	//wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 	//wp_enqueue_style( 'bootstrap_font_awsome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'w3schools', 'http://www.w3schools.com/lib/w3.css' );
+	//wp_enqueue_style( 'w3schools', 'http://www.w3schools.com/lib/w3.css' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_script( 'autocomplete-script', get_template_directory_uri() . '/js/jquery.autocomplete.min.js');
 	

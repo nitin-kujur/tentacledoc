@@ -1,4 +1,4 @@
-                       <div id="goUpbtn" class="w3-card-2" onclick="goUp()"  style="border-radius: 50%;
+                       <div id="goUpbtn" class="w3-card-4 w3-hover-shadow" onclick="goUp()"  style="border-radius: 50%;
           border:3px solid #1a1a1a; 
           background-color: teal; 
           color: white !important; 
@@ -68,7 +68,7 @@ function w3_show_nav(name1, name2) {
 // Change style of top container on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
         document.getElementById("myTop").classList.add("w3-card-4");
         document.getElementById("myIntro").classList.add("w3-show-inline-block");
     } else {
@@ -91,6 +91,7 @@ function myAccordion(id) {
 }
 
 function goUp(){
+            $('#goUpbtn').animateCss('bounceIn');
             jQuery("html, body").animate({
                   scrollTop: "0"
                 }, 1000);
@@ -103,7 +104,7 @@ function goUp(){
    
 
     <?php
-	$menu_name = 'ByRole';
+	$menu_name = 'ByFeature';
 ?>
 
 <script type="text/javascript">
@@ -117,7 +118,11 @@ function goUp(){
    $('#autocomplete').autocomplete({
         lookup: menuList,
         onSelect: function (suggestion) {
-          document.getElementById('searchBtn').setAttribute('onclick',' ajaxGetdoc("'+suggestion.data+'")');
+           btn = document.getElementById('psudoBtn');
+           btn.setAttribute('href', '#'+suggestion.data); 
+           btn.click();
+           // location.href = "#"+suggestion.data;                 //Go to the target element.
+           // alert(location.href);
         }
       });
  });
@@ -141,7 +146,7 @@ function goUp(){
                             $value = preg_replace("/[+]/", ".", $menu_item->title);
                             $value1 = preg_replace("/(&nbsp;)/", ".",$value);
 
-                            $menu_list[] = '{value:"'.$menu_item->title.'",data:"'.$menu_item->url.'"}';
+                            $menu_list[] = '{value:"'.$menu_item->title.'",data:"'.$menu_item->ID.'"}';
 
 
                             $menu_array = array();
@@ -159,7 +164,7 @@ function goUp(){
                                               $value = preg_replace("/(\+&nbsp;)/", "", $subsubmenu->title);
                                               $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                              $menu_array2[] = '{value:"'.$value.'",data:"'.$subsubmenu->url.'"}';
+                                              $menu_array2[] = '{value:"'.$value.'",data:"'.$subsubmenu->ID.'"}';
 
                                           }
                                       }
@@ -168,7 +173,7 @@ function goUp(){
                                           $value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                           $value = preg_replace("/(&nbsp;)/", " ",$value);
                                           
-                                          $menu_list[] = '{value:"'.$value.'",data:"'.$submenu->url.'"}';
+                                          $menu_list[] = '{value:"'.$value.'",data:"'.$submenu->ID.'"}';
 
                                           foreach( $menu_array2 as $menu_array2_item ) {
                                           			$menu_list[] = $menu_array2_item;
@@ -179,7 +184,7 @@ function goUp(){
                                       	$value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                         $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                      	$menu_list[] = '{value:"'.$value.'",data:"'.$submenu->url.'"}';
+                                      	$menu_list[] = '{value:"'.$value.'",data:"'.$submenu->ID.'"}';
                                       }
                                     // ----------------------------------------------
 
