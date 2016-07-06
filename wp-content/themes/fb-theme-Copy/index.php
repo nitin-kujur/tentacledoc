@@ -4,23 +4,23 @@
  <div id="Adm" class="w3-container w3-animate-left container w3-padding-24 context" style="padding-left:; width:94%; display:block; ">
     <?php 
             
-            $menu_name = 'ByFeature';
-            show_post( $menu_name , '3');
+            $menu_name = 'Admin';
+            show_post( $menu_name , '1');
             ?>                         
  </div>
 
  <div id="Mgr" class="w3-container w3-animate-left container w3-padding-24 context" style="padding-left:; width:94%; display:none;">
     <?php 
             
-            $menu_name = 'ByRole';
-            show_post( $menu_name , '3');
+            $menu_name = 'Manager';
+            show_post( $menu_name , '2');
             ?>                          
  </div>
 
  <div id="Telc" class="w3-container w3-animate-left container w3-padding-24 context" style="padding-left:; width:94%; display:none;">
     <?php 
             
-            $menu_name = 'ByFeature';
+            $menu_name = 'TeleCaller';
             show_post( $menu_name , '3');
             ?>                          
  </div>

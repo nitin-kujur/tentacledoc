@@ -18,7 +18,10 @@ add_action( 'wp_enqueue_scripts', 'fb_theme_enqueue_styles');
 
 function fb_theme_register_theme_menu() {
     register_nav_menus( array('ByRole' => 'By Role Menu',
-    					'ByFeature' => 'By Feature Menu'
+    					'ByFeature' => 'By Feature Menu',
+    					'Admin' => 'Admin Menu',
+    					'Manager' => 'Manager Menu',
+    					'TeleCaller' => 'TeleCaller Menu'
      ));
 }
 add_action( 'init', 'fb_theme_register_theme_menu' );

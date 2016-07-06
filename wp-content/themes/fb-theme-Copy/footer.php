@@ -68,7 +68,7 @@ function w3_show_nav(name1, name2) {
 // Change style of top container on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
-    if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
+    if (document.body.scrollTop > 140 || document.documentElement.scrollTop > 140) {
         document.getElementById("myTop").classList.add("w3-card-4");
         document.getElementById("myIntro").classList.add("w3-show-inline-block");
     } else {
@@ -104,7 +104,7 @@ function goUp(){
    
 
     <?php
-	$menu_name = 'ByFeature';
+	$menu_name = 'Admin';
 ?>
 
 <script type="text/javascript">
