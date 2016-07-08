@@ -1,3 +1,10 @@
+<?php 
+
+    $role = $GLOBALS["role"];
+
+?>
+
+
                        <div id="goUpbtn" class="w3-card-4 w3-hover-shadow" onclick="goUp()"  style="border-radius: 50%;
           border:3px solid #1a1a1a; 
           background-color: teal; 
@@ -46,22 +53,7 @@ function w3_show_nav(name1, name2) {
     document.getElementById("Mgr").style.display = "none";
     document.getElementById("Telc").style.display = "none";
     document.getElementById(name2).style.display = "block";
-    // $par = $('tab');
-    // if(name == "admin"){
-    //   $('a').text = 'Admin';
-    //   $('m').text = 'M';
-    //   $('t').text = 'T';
-    // }
-    // else if(name.equals("manager")){
-    //   $('a').text('A');
-    //   $('m').text('Manager');
-    //   $('t').text('T');
-    // }
-    // else if(name == "telecaller"){
-    //   $('a').text = 'A';
-    //   $('m').text = 'M';
-    //   $('t').text = 'TeleCaller';
-    // }
+    
     // w3_open();
 }
 
@@ -96,6 +88,7 @@ function goUp(){
                   scrollTop: "0"
                 }, 1000);
            }
+
 </script>
      
 
@@ -103,17 +96,35 @@ function goUp(){
 	
    
 
-    <?php
-	$menu_name = 'Admin';
+<?php
+
+  switch ($role) {
+
+    case "Admin":
+        $menu_name = 'Admin'; $code = '1';
+        break;
+
+    case "Manager":
+        $menu_name = 'Manager'; $code = '2';
+        break;
+
+    case "TeleCaller":
+        $menu_name = 'TeleCaller'; $code = '3';
+        break;
+
+    default:
+        $menu_name = 'Admin'; $code = '1';
+}
+	
 ?>
 
 <script type="text/javascript">
  $(function(){
-	var list = <?php create_custom_list( $menu_name )?>;
-  // var menuList = JSON.parse(list);
+	var list = <?php create_custom_list( $menu_name, $code )?>;
+  //var menuList = JSON.parse('['+list+']');
   var menuList = (new Function("return [" + list + "];")());
-  console.log(list);
-	console.log(menuList);
+  // console.log(list);
+	// console.log(menuList);
 
    $('#autocomplete').autocomplete({
         lookup: menuList,
@@ -121,8 +132,7 @@ function goUp(){
            btn = document.getElementById('psudoBtn');
            btn.setAttribute('href', '#'+suggestion.data); 
            btn.click();
-           // location.href = "#"+suggestion.data;                 //Go to the target element.
-           // alert(location.href);
+           
         }
       });
  });
@@ -130,7 +140,7 @@ function goUp(){
 
 <?php 
 
-            function create_custom_list( $theme_location ) {
+            function create_custom_list( $theme_location, $code ) {
                 if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
          
                     $menu = get_term( $locations[$theme_location], 'nav_menu' );
@@ -146,7 +156,7 @@ function goUp(){
                             $value = preg_replace("/[+]/", ".", $menu_item->title);
                             $value1 = preg_replace("/(&nbsp;)/", ".",$value);
 
-                            $menu_list[] = '{value:"'.$menu_item->title.'",data:"'.$menu_item->ID.'"}';
+                            $menu_list[] = '{value:"'.$menu_item->title.'",data:"'.$code.$menu_item->ID.'"}';
 
 
                             $menu_array = array();
@@ -164,7 +174,7 @@ function goUp(){
                                               $value = preg_replace("/(\+&nbsp;)/", "", $subsubmenu->title);
                                               $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                              $menu_array2[] = '{value:"'.$value.'",data:"'.$subsubmenu->ID.'"}';
+                                              $menu_array2[] = '{value:"'.$value.'",data:"'.$code.$subsubmenu->ID.'"}';
 
                                           }
                                       }
@@ -173,7 +183,7 @@ function goUp(){
                                           $value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                           $value = preg_replace("/(&nbsp;)/", " ",$value);
                                           
-                                          $menu_list[] = '{value:"'.$value.'",data:"'.$submenu->ID.'"}';
+                                          $menu_list[] = '{value:"'.$value.'",data:"'.$code.$submenu->ID.'"}';
 
                                           foreach( $menu_array2 as $menu_array2_item ) {
                                           			$menu_list[] = $menu_array2_item;
@@ -184,7 +194,7 @@ function goUp(){
                                       	$value = preg_replace("/(\+&nbsp;)/", "", $submenu->title);
                                         $value = preg_replace("/(&nbsp;)/", " ",$value);
 
-                                      	$menu_list[] = '{value:"'.$value.'",data:"'.$submenu->ID.'"}';
+                                      	$menu_list[] = '{value:"'.$value.'",data:"'.$code.$submenu->ID.'"}';
                                       }
                                     // ----------------------------------------------
 

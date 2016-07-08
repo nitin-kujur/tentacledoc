@@ -26,4 +26,7 @@ function fb_theme_register_theme_menu() {
 }
 add_action( 'init', 'fb_theme_register_theme_menu' );
 
+$role = $GLOBALS["role"];
+$check = $GLOBALS["check"];
+
 ?>

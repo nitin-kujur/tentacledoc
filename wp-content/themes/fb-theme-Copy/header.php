@@ -1,3 +1,9 @@
+<?php 
+
+    $role = $GLOBALS["role"];
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html <?php language_attributes( 'html' ); ?>>
 	<head>
@@ -19,7 +25,7 @@
     <link rel="stylesheet" href="<?php echo home_url()?>/wp-content/themes/fb-theme-Copy/css/w3.css">
     <link rel="stylesheet" href="<?php echo home_url()?>/wp-content/themes/fb-theme-Copy/css/w3-theme-teal.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.apple.com/wss/fonts/?family=Myriad+Set+Pro&amp;weights=200,400&amp;v=1" type="text/css" media="all"> 
+    <!-- <link rel="stylesheet" href="https://www.apple.com/wss/fonts/?family=Myriad+Set+Pro&amp;weights=200,400&amp;v=1" type="text/css" media="all">  -->
 
     <script>
        $.fn.extend({
@@ -38,11 +44,13 @@
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
             point = Number(target.offset().top)-65;
             if (target.length) {
+              // ----------------------------
+                  $('#mySidenav').find('a').css('color','white');
+                  $(this).css('color','teal');
+              // ----------------------------
               $('html, body').animate({
                 scrollTop: point
               }, 600);
-              // $(window).scrollBy(0,100);
-              // alert(Number(target.offset().top));
               return false;
             }
           }
@@ -69,6 +77,11 @@
         margin: 20px 0px;
         border: 1px solid lightgrey;
       }
+
+      .w3-a span{
+        font-weight: normal;
+      }
+
       a:hover{
         background: rgb(204,204,204) !important;
         color:teal;
@@ -206,6 +219,7 @@
 	</head>
 	<body class="w3-light-grey">
 
+<!-- nav start -->
 <nav class="w3-sidenav w3-collapse w3-dark-grey- w3-animate-left w3-card-2" style="z-index:3;width:; background:rgb(39,39,39); color:white;" id="mySidenav">
   <!-- <a href="#" class="w3-border-bottom w3-large"><img src="W3.CSSteal_files/w3schools.png" style="width:80%;"></a>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-text-teal w3-hide-large w3-closenav w3-large">Close <i class="fa fa-remove"></i></a> -->
@@ -221,50 +235,120 @@
       </form>
     </div>
   <div class="w3-hide-largee tab">
-    <a href="javascript:void(0)" id="a" title="Admin" onclick="w3_show_nav('admin', 'Adm')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">A</a>
-    <a href="javascript:void(0)" id="m" title="Manager" onclick="w3_show_nav('manager', 'Mgr')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">M</a>
-    <a href="javascript:void(0)" id="t" title="TeleCaller" onclick="w3_show_nav('telecaller', 'Telc')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">T</a>
+
+    <?php
+    
+      switch ($role) {
+
+    case "Admin":
+        echo '<a href="javascript:void(0)" id="a" title="Admin Documentation" class="w3-center w3-left w3-theme w3-hover-grey w3-padding-16 w3-a" style="width:100%"><span class="w3-xxlarge">Admin</span></a>';
+        break;
+        
+    case "Manager":
+        echo '<a href="javascript:void(0)" id="m" title="Manager Documentation" class="w3-center w3-left w3-theme w3-hover-grey w3-padding-16 w3-a" style="width:100%"><span class="w3-xxlarge">Manager</span></a>';
+        break;
+        
+    case "TeleCaller":
+        echo '<a href="javascript:void(0)" id="t" title="TeleCaller Documentation" class="w3-center w3-left w3-theme w3-hover-grey w3-padding-16 w3-a" style="width:100%"><span class="w3-xxlarge">TeleCaller</span></a>';
+        break;
+        
+    default:
+        echo '<a href="javascript:void(0)" id="a" title="Admin Documentation" onclick="w3_show_nav(\'admin\', \'Adm\')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">A</a>';
+        echo '<a href="javascript:void(0)" id="m" title="Manager Documentation" onclick="w3_show_nav(\'manager\', \'Mgr\')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">M</a>';
+        echo '<a href="javascript:void(0)" id="t" title="TeleCaller Documentation" onclick="w3_show_nav(\'telecaller\', \'Telc\')" class="w3-center w3-left w3-theme w3-hover-white w3-padding-16 w3-large" style="width:33.33%">T</a>';
+      }
+    
+    ?>
+
+    
   </div>
   <div class="w3-clear"></div>
     <a href="javascript:void(0);" onclick="w3_close();" class="w3-right1 w3-hover-none w3-xlarge w3-padding1 w3-hide-large w3-hover-text-teal w3-closebtn" title="close menu"><i class="fa fa-times-circle w3-margin"></i></a>
   
-  <div style="display: block;" id="admin" class="myMenu w3-animate-opacity w3-padding-top">
-  <div class="w3-container">
-    <p class="w3-animate-left w3-large">Admin</p>
-  </div>
-     <div class="" id="accordion">
-         <?php 
-            
-            $menu_name = 'Admin';
-            create_custom_menus( $menu_name , '1');
-            ?>
-     </div>
-  </div>
-  <div id="manager" class="myMenu w3-padding-top w3-animate-opacity" style="display: none;">
-  <div class="w3-container">
-    <p class="w3-animate-left w3-large">Manager</p>
-  </div>
-    <div class="" id="accordion1">
-         <?php 
-            
-            $menu_name = 'Manager';
-            create_custom_menus( $menu_name , '2');
-            ?>
-    </div>
-  </div>
-  <div id="telecaller" class="myMenu w3-padding-top w3-animate-opacity" style="display: none;">
-  <div class="w3-container">
-    <p class="w3-animate-left w3-large">TeleCaller</p>
-  </div>
-    <div class="" id="accordion2">
-         <?php 
-            
-            $menu_name = 'TeleCaller';
-            create_custom_menus( $menu_name , '3');
-            ?>
-    </div>
-  </div>
-</nav>
+    <?php switch ($role) {
+        case "Admin": 
+        echo '<div style="display: block;" id="admin" class="myMenu w3-animate-opacity w3-padding-top">';
+          echo '<div class="w3-container">';
+            // echo '<p class="w3-animate-left w3-large">Admin</p>';
+          echo '</div>';
+           echo '<div class="" id="accordion">';
+                  
+                  $menu_name = 'Admin';
+                  create_custom_menus( $menu_name , '1');
+                 
+           echo '</div>';
+        echo '</div>';
+        break;
+
+        case "Manager": 
+        echo '<div id="manager" class="myMenu w3-padding-top w3-animate-opacity" style="display: block;">';
+          echo '<div class="w3-container">';
+            // echo '<p class="w3-animate-left w3-large">Manager</p>';
+          echo '</div>';
+          echo '<div class="" id="accordion1">';
+                  
+                  $menu_name = 'Manager';
+                  create_custom_menus( $menu_name , '2');
+                  
+          echo '</div>';
+        echo '</div>';
+        break;
+
+        case "TeleCaller": 
+        echo '<div id="telecaller" class="myMenu w3-padding-top w3-animate-opacity" style="display: block;">';
+          echo '<div class="w3-container">';
+            // echo '<p class="w3-animate-left w3-large">TeleCaller</p>';
+          echo '</div>';
+          echo '<div class="" id="accordion2">';
+                  
+                  $menu_name = 'TeleCaller';
+                  create_custom_menus( $menu_name , '3');
+                  
+          echo '</div>';
+        echo '</div>';
+        break;
+
+        default:  
+        echo '<div style="display: block;" id="admin" class="myMenu w3-animate-opacity w3-padding-top">';
+          echo '<div class="w3-container">';
+            echo '<p class="w3-animate-left w3-large">Admin</p>';
+          echo '</div>';
+           echo '<div class="" id="accordion">';
+                  
+                  $menu_name = 'Admin';
+                  create_custom_menus( $menu_name , '1');
+                  
+           echo '</div>';
+        echo '</div>';
+        echo '<div id="manager" class="myMenu w3-padding-top w3-animate-opacity" style="display: none;">';
+          echo '<div class="w3-container">';
+            echo '<p class="w3-animate-left w3-large">Manager</p>';
+          echo '</div>';
+          echo '<div class="" id="accordion1">';
+                  
+                  $menu_name = 'Manager';
+                  create_custom_menus( $menu_name , '2');
+                  
+          echo '</div>';
+        echo '</div>';
+        echo '<div id="telecaller" class="myMenu w3-padding-top w3-animate-opacity" style="display: none;">';
+          echo '<div class="w3-container">';
+            echo '<p class="w3-animate-left w3-large">TeleCaller</p>';
+          echo '</div>';
+          echo '<div class="" id="accordion2">';
+                  
+                  $menu_name = 'TeleCaller';
+                  create_custom_menus( $menu_name , '3');
+                  
+          echo '</div>';
+        echo '</div>';
+    }
+
+    ?>
+
+  
+</nav><!-- nav end -->
+
 
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
@@ -301,7 +385,7 @@
                              
                             $parent = $menu_item->ID;
 
-                             $menu_list .= '<a hrefs="#" href="#'.$code.$menu_item->ID.'" ><p>' . $menu_item->title . '</p></a>' ."\n";
+                             $menu_list .= '<a class="w3-a w3-medium" hrefs="#" href="#'.$code.$menu_item->ID.'" ><span class="w3-large">' . $menu_item->title . '</span></a>' ."\n";
                             // $menu_list .= '<a data-toggle="collapse" data-parent="#accordion" href="#'.preg_replace("/[^a-zA-Z]/", "", $menu_item->title).$code.'"><h3 class="w3-large">' . $menu_item->title .'<span class="w3-margin-right w3-right"><i class="fa fa-angle-down w3-xlarge"></i></span></h3>' .'</a>' ."\n";
                             // $menu_list .= '<div class="panel-collapse collapse w3-grey" id="'.preg_replace("/[^a-zA-Z]/", "", $menu_item->title).$code.'"><div class="panel-body w3-padding-0">'."\n";
 

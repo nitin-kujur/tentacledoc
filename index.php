@@ -11,6 +11,21 @@
  *
  * @var bool
  */
+
+//--------------------------------------------------------------------
+
+$role = isset($_GET["role"]) ? $_GET["role"] : ''; 
+$token = isset($_GET["token"]) ? $_GET["token"] : '';
+
+// $role = isset($_POST["role"]) ? $_POST["role"] : ''; 
+// $token = isset($_POST["token"]) ? $_POST["token"] : '';
+
+// $role = 'TeleCaller';
+$check = (strcasecmp($token, 'oLH2uvgLT5DbHz8gUaCB8KSade8MkGuAwvTkHG4S') == 0) ? 'pass' : 'fail' ;
+// $check = 'pass';
+
+//--------------------------------------------------------------------
+
 define('WP_USE_THEMES', true);
 
 /** Loads the WordPress Environment and Template */
