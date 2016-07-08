@@ -1,26 +1,26 @@
 
 # BEGIN WordPress
-#  <IfModule mod_rewrite.c>
-#  RewriteEngine On
-#  RewriteBase /tentacle_doc/
-#  RewriteRule ^index\.php$ - [L]
-#  RewriteCond %{REQUEST_FILENAME} !-f
-#  RewriteCond %{REQUEST_FILENAME} !-d
-#  RewriteRule . /tentacle_doc/index.php [L]
-#  </IfModule>
+  <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /tentacle_doc/
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /tentacle_doc/index.php [L]
+  </IfModule>
 
 
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
-<IfModule mod_headers.c>
-   Header set Access-Control-Allow-Origin "*"
-</IfModule>
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteRule ^index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+#</IfModule>
+#<IfModule mod_headers.c>
+#   Header set Access-Control-Allow-Origin "*"
+#</IfModule>
 
 
 # END WordPress
