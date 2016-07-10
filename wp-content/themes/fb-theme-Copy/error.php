@@ -27,7 +27,7 @@
 	<body class="w3-light-grey">
 		<div class="w3-container" style="height:100%; width:100%;">
 			<div class="w3-display-middle">
-				<h2 class="w3-text-black w3-animate-top">Please <a class="w3-text-teal" href="http://tentacle.sunoray.com">Sign in</a> before viewing this Document.</h2>
+				<h2 class="w3-text-black w3-animate-top">You need to be signed in at <a class="w3-text-teal" href="http://tentacle.sunoray.com"><span><img class="img-responsive" src="<?php echo home_url()?>/wp-content/uploads/2016/06/te-favicon.png"></span><span><strong>ntacle</strong></span></a> in order to view this Document.</h2>
 			</div>
 		</div>
 	</body>
