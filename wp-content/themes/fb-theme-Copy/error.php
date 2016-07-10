@@ -10,7 +10,7 @@
 				text-decoration:none;
 				/*-webkit-transform-origin: 50% 100%;*/
 				/*-webkit-animation: anchor 1s linear 1s infinite alternate;*/
-				animation: anchor 1s ease-in-out 1s infinite alternate;
+				animation: anchor 2s ease-in-out 1s infinite alternate;
 			}
 
 			/*@-webkit-keyframes anchor{
