@@ -8,8 +8,11 @@
 
   if($check == 'pass' && ( $role == 'Admin' || $role == 'Manager' || $role == 'TeleCaller' ) )
     include 'zindex.php';
-  else
-    include 'error.php';
+  else{
+  	header("Location: http://tentacle.sunoray.com", true, 303);
+		exit(0);  
+  }
+    //include 'error.php'; 
 
 ////-----------------------------------------
   //// Deployment Settings
